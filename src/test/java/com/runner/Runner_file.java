@@ -13,8 +13,8 @@ import cucumber.api.junit.Cucumber;
 public class Runner_file {
 
 	@CucumberOptions(features = " C:\\Users\\Dell\\eclipse-workspace\\new\\src\\test\\java\\com\\feature\\new.feature"
-			, glue = "com.stepdeff",
-			monochrome = true
+			, glue = "com.stepdeff"
+			//,monochrome = true
 			//dryRun = true
 			)
 	@RunWith(Cucumber.class)
@@ -24,7 +24,9 @@ public static WebDriver driver;
 		
 
 		@BeforeClass
-		public static void launch() {
+		public static void launch() throws Throwable {
+			
+			
 			driver = Add_Base.launchbrowser("chrome");
 			driver.get("https://www.amazon.in/");
 		}
